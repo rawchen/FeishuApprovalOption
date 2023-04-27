@@ -93,6 +93,24 @@ public class ApprovalOptionController {
 		return data;
 	}
 
+	/**
+	 * 费用项目列表
+	 * @param params
+	 * @return
+	 */
+	@PostMapping("/expense")
+	public FeishuJsonResult<ApprovalSelectOutResult> expense(@RequestBody ExternalOptionsParams params) {
+		if (!params.getToken().equals(Constant.TOKEN)) {
+			return FeishuJsonResult.getFailJsonResult();
+		}
+		ApprovalSelectOutResult result = k3CloudService.expense(params);
+		FeishuJsonResult<ApprovalSelectOutResult> data = new FeishuJsonResult<>();
+		data.setResultStatus(ResultCode.SUCCESS);
+		data.setData(result);
+		data.setErrMsg("success!");
+		return data;
+	}
+
 
 
 

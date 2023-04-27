@@ -16,4 +16,6 @@ public interface K3CloudService {
 	ApprovalSelectOutResult organizations(ExternalOptionsParams params);
 
 	ApprovalSelectOutResult currency(ExternalOptionsParams params);
+
+	ApprovalSelectOutResult expense(ExternalOptionsParams params);
 }
