@@ -18,4 +18,12 @@ public interface K3CloudService {
 	ApprovalSelectOutResult currency(ExternalOptionsParams params);
 
 	ApprovalSelectOutResult expense(ExternalOptionsParams params);
+
+	ApprovalSelectOutResult expenceDepartment(ExternalOptionsParams params);
+
+	ApprovalSelectOutResult expenceOrganizations(ExternalOptionsParams params);
+
+	ApprovalSelectOutResult enumBillInvoiceType(ExternalOptionsParams params);
+
+	ApprovalSelectOutResult settleType(ExternalOptionsParams params);
 }

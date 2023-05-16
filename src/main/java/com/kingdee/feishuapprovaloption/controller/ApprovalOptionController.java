@@ -111,7 +111,76 @@ public class ApprovalOptionController {
 		return data;
 	}
 
+	/**
+	 * 费用承担组织列表
+	 * @param params
+	 * @return
+	 */
+	@PostMapping("/expenceOrganizations")
+	public FeishuJsonResult<ApprovalSelectOutResult> expenceOrganizations(@RequestBody ExternalOptionsParams params) {
+		if (!params.getToken().equals(Constant.TOKEN)) {
+			return FeishuJsonResult.getFailJsonResult();
+		}
+		ApprovalSelectOutResult result = k3CloudService.expenceOrganizations(params);
+		FeishuJsonResult<ApprovalSelectOutResult> data = new FeishuJsonResult<>();
+		data.setResultStatus(ResultCode.SUCCESS);
+		data.setData(result);
+		data.setErrMsg("success!");
+		return data;
+	}
 
+	/**
+	 * 费用承担部门列表
+	 * @param params
+	 * @return
+	 */
+	@PostMapping("/expenceDepartment")
+	public FeishuJsonResult<ApprovalSelectOutResult> expenceDepartment(@RequestBody ExternalOptionsParams params) {
+		if (!params.getToken().equals(Constant.TOKEN)) {
+			return FeishuJsonResult.getFailJsonResult();
+		}
+		ApprovalSelectOutResult result = k3CloudService.expenceDepartment(params);
+		FeishuJsonResult<ApprovalSelectOutResult> data = new FeishuJsonResult<>();
+		data.setResultStatus(ResultCode.SUCCESS);
+		data.setData(result);
+		data.setErrMsg("success!");
+		return data;
+	}
 
+	/**
+	 * 发票类型（财务使用）枚举列表
+	 * @param params
+	 * @return
+	 */
+	@PostMapping("/enumBillInvoiceType")
+	public FeishuJsonResult<ApprovalSelectOutResult> enumBillInvoiceType(@RequestBody ExternalOptionsParams params) {
+		if (!params.getToken().equals(Constant.TOKEN)) {
+			return FeishuJsonResult.getFailJsonResult();
+		}
+		ApprovalSelectOutResult result = k3CloudService.enumBillInvoiceType(params);
+		FeishuJsonResult<ApprovalSelectOutResult> data = new FeishuJsonResult<>();
+		data.setResultStatus(ResultCode.SUCCESS);
+		data.setData(result);
+		data.setErrMsg("success!");
+		return data;
+	}
+
+	/**
+	 * 结算方式列表
+	 * @param params
+	 * @return
+	 */
+	@PostMapping("/settleType")
+	public FeishuJsonResult<ApprovalSelectOutResult> settleType(@RequestBody ExternalOptionsParams params) {
+		if (!params.getToken().equals(Constant.TOKEN)) {
+			return FeishuJsonResult.getFailJsonResult();
+		}
+		ApprovalSelectOutResult result = k3CloudService.settleType(params);
+		FeishuJsonResult<ApprovalSelectOutResult> data = new FeishuJsonResult<>();
+		data.setResultStatus(ResultCode.SUCCESS);
+		data.setData(result);
+		data.setErrMsg("success!");
+		return data;
+	}
 
 }
